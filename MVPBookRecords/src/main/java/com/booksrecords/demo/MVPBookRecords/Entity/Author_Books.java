@@ -16,12 +16,12 @@ public class Author_Books {
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "authors_id", referencedColumnName = "id")
+    @JoinColumn(name = "author_id", referencedColumnName = "id")
     private Authors authors_id;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "books_id", referencedColumnName = "id")
+    @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Books books_id;
 
     public Author_Books() {

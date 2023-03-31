@@ -5,5 +5,5 @@ import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books;
 import java.util.List;
 
 public interface FindTop3BooksService {
-    List<Top3Books> findTop3BooksRented();
+    List<Top3Books> findTop3BooksRented(String country);
 }

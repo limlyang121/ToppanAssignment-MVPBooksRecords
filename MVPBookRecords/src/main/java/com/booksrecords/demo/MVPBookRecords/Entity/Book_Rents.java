@@ -1,10 +1,7 @@
 package com.booksrecords.demo.MVPBookRecords.Entity;
 
 import lombok.Data;
-import org.springframework.security.core.parameters.P;
-
 import javax.persistence.*;
-import java.awt.print.Book;
 import java.util.Date;
 
 
@@ -15,14 +12,16 @@ import java.util.Date;
 public class Book_Rents {
     @Id
     @ManyToOne
-    @JoinColumn(name = "people", referencedColumnName = "id")
+    @JoinColumn(name = "person_id", referencedColumnName = "id")
     private People person_id;
     @Id
     @ManyToOne
-    @JoinColumn(name = "books", referencedColumnName = "id")
+    @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Books book_id;
 
+    @Column(name = "createdAt")
     private Date createdAt;
+    @Column(name = "updatedAt")
     private Date updatedAt;
 
     public Book_Rents() {

@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Data
-@Table
+@Table (name = "books", schema = "public")
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,9 +19,9 @@ public class Books {
     private int id;
     @Column(name = "name")
     private String name;
-    @Column(name = "createdAt")
+    @Column(name = "\"createdAt\"")
     private Date createdAt;
-    @Column(name = "updatedAt")
+    @Column(name = "\"updatedAt\"")
     private Date updatedAt;
 
 
