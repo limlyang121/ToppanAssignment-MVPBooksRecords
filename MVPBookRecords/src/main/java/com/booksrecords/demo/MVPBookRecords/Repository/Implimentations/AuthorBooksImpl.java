@@ -1,5 +1,6 @@
 package com.booksrecords.demo.MVPBookRecords.Repository.Implimentations;
 
+import com.booksrecords.demo.MVPBookRecords.Entity.Author_Books;
 import com.booksrecords.demo.MVPBookRecords.Entity.Authors;
 import com.booksrecords.demo.MVPBookRecords.Repository.Interface.AuthorBooksRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +29,16 @@ public class AuthorBooksImpl implements AuthorBooksRepo {
             return Optional.empty();
         }else
             return Optional.of(authorsList.get(0));
+    }
+
+    @Override
+    public Author_Books save(Author_Books authorBooks) {
+        try{
+            entityManager.merge(authorBooks);
+            return authorBooks;
+        }catch (Exception e){
+            System.out.println(e);
+            return null;
+        }
     }
 }

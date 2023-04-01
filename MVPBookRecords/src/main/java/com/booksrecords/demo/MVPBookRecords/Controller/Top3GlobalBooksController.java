@@ -19,7 +19,6 @@ public class Top3GlobalBooksController {
     public List<Top3Books> getTop3Books(@RequestParam("country_code") String countryCode){
         List<Top3Books> top3BooksList = findTop3BooksService.findTop3BooksRented(countryCode);
 
-
         return top3BooksList;
     }
 }

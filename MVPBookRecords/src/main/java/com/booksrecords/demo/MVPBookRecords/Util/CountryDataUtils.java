@@ -1,5 +1,6 @@
 package com.booksrecords.demo.MVPBookRecords.Util;
 
+import com.booksrecords.demo.MVPBookRecords.ExceptionHandling.CountryNotFoundException;
 import com.opencsv.CSVReaderBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -47,7 +48,11 @@ public class CountryDataUtils {
     }
 
     public  long getCountryCode (String country){
-        return countryDataMap.get(country).getCountryCode();
+        try{
+            return countryDataMap.get(country).getCountryCode();
+        }catch(NullPointerException e){
+            throw new CountryNotFoundException("invalid parameter");
+        }
     }
 
 

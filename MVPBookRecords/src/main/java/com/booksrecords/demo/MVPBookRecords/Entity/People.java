@@ -10,7 +10,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table
+@Table (schema = "public")
 @NoArgsConstructor
 @AllArgsConstructor
 public class People {

@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "book_rents")
+@Table(name = "book_rents",  schema = "public")
 @IdClass(Book_RentsID.class)
 public class Book_Rents {
     @Id

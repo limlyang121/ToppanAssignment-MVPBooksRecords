@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "author_books")
+@Table(name = "author_books",  schema = "public")
 @IdClass(Author_BooksID.class)
 public class Author_Books {
     private Date createdAt;

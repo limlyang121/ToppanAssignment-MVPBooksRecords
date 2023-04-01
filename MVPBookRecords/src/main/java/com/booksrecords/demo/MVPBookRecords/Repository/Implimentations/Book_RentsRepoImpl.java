@@ -1,5 +1,7 @@
 package com.booksrecords.demo.MVPBookRecords.Repository.Implimentations;
 
+import com.booksrecords.demo.MVPBookRecords.Entity.Author_Books;
+import com.booksrecords.demo.MVPBookRecords.Entity.Book_Rents;
 import com.booksrecords.demo.MVPBookRecords.Entity.Books;
 import com.booksrecords.demo.MVPBookRecords.Entity.People;
 import com.booksrecords.demo.MVPBookRecords.Repository.Interface.Book_RentsRepo;
@@ -45,4 +47,14 @@ public class Book_RentsRepoImpl implements Book_RentsRepo {
         return query.getResultList();
     }
 
+    @Override
+    public Book_Rents save(Book_Rents bookRents) {
+        try {
+            entityManager.merge(bookRents);
+            return bookRents;
+        } catch (Exception e) {
+            System.err.println(e);
+            return null;
+        }
+    }
 }
