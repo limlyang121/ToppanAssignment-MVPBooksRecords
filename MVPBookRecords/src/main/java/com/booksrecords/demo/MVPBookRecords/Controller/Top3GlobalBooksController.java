@@ -1,9 +1,15 @@
 package com.booksrecords.demo.MVPBookRecords.Controller;
 
 import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books;
+import com.booksrecords.demo.MVPBookRecords.Entity.*;
+import com.booksrecords.demo.MVPBookRecords.Repository.Interface.*;
 import com.booksrecords.demo.MVPBookRecords.Service.FindTop3BooksService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -16,7 +22,7 @@ public class Top3GlobalBooksController {
     }
 
     @GetMapping("getTop3ReadBooks")
-    public List<Top3Books> getTop3Books(@RequestParam("country_code") String countryCode){
+    public List<Top3Books> getTop3Books(@RequestParam("country_code") String countryCode) {
         List<Top3Books> top3BooksList = findTop3BooksService.findTop3BooksRented(countryCode);
 
         return top3BooksList;

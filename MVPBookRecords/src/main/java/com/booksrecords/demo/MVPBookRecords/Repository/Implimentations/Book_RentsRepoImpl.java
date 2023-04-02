@@ -28,6 +28,10 @@ public class Book_RentsRepoImpl implements Book_RentsRepo {
                 "group by b.id, b.name " +
                 "order by count (br.book_id) desc");
 
+//        Query query = entityManager.createQuery("SELECT br.book_id from Book_Rents as br " +
+//                "group by br.book_id.id " +
+//                "order by count (br.book_id.id) desc");
+//
 
         query.setMaxResults(3);
         return  query.getResultList();
@@ -50,7 +54,7 @@ public class Book_RentsRepoImpl implements Book_RentsRepo {
     @Override
     public Book_Rents save(Book_Rents bookRents) {
         try {
-            entityManager.merge(bookRents);
+            entityManager.persist(bookRents);
             return bookRents;
         } catch (Exception e) {
             System.err.println(e);

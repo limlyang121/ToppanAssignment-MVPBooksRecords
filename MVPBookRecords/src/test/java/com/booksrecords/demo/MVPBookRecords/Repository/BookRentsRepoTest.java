@@ -4,7 +4,6 @@ import com.booksrecords.demo.MVPBookRecords.Entity.Book_Rents;
 import com.booksrecords.demo.MVPBookRecords.Entity.Books;
 import com.booksrecords.demo.MVPBookRecords.Entity.People;
 import com.booksrecords.demo.MVPBookRecords.Repository.Interface.Book_RentsRepo;
-import com.booksrecords.demo.MVPBookRecords.Repository.Interface.CrudAuthorsRepo;
 import com.booksrecords.demo.MVPBookRecords.Repository.Interface.CrudBooksRepo;
 import com.booksrecords.demo.MVPBookRecords.Repository.Interface.CrudPeopleRepo;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,7 +20,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 public class BookRentsRepoTest {
-    private final CrudAuthorsRepo crudAuthorsRepo;
     private final CrudBooksRepo crudBooksRepo;
     private final CrudPeopleRepo crudPeopleRepo;
     private final Book_RentsRepo bookRentsRepo;
@@ -30,8 +28,7 @@ public class BookRentsRepoTest {
     private List<Books> booksList;
 
     @Autowired
-    public BookRentsRepoTest(CrudAuthorsRepo crudAuthorsRepo, CrudBooksRepo crudBooksRepo, CrudPeopleRepo crudPeopleRepo, Book_RentsRepo bookRentsRepo) {
-        this.crudAuthorsRepo = crudAuthorsRepo;
+    public BookRentsRepoTest(CrudBooksRepo crudBooksRepo, CrudPeopleRepo crudPeopleRepo, Book_RentsRepo bookRentsRepo) {
         this.crudBooksRepo = crudBooksRepo;
         this.crudPeopleRepo = crudPeopleRepo;
         this.bookRentsRepo = bookRentsRepo;
@@ -80,6 +77,8 @@ public class BookRentsRepoTest {
         books3.setCreatedAt(new Date());
         books3.setUpdatedAt(new Date());
         booksList.add(books3);
+
+
 
     }
 

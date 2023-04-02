@@ -21,9 +21,9 @@ public class People {
 
     @Column(name = "name")
     private String name;
-    @Column(name = "createdAt")
+    @Column(name = "\"createdAt\"")
     private Date createdAt;
-    @Column(name = "updatedAt")
+    @Column(name = "\"updatedAt\"")
     private Date updatedAt;
     @Column(name = "country_id")
     private long country_id;

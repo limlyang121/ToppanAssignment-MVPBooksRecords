@@ -2,6 +2,7 @@ package com.booksrecords.demo.MVPBookRecords.Service;
 
 import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books;
 import com.booksrecords.demo.MVPBookRecords.Entity.Books;
+import com.booksrecords.demo.MVPBookRecords.ExceptionHandling.CountryNotFoundException;
 import com.booksrecords.demo.MVPBookRecords.ExceptionHandling.NoBookResultException;
 import com.booksrecords.demo.MVPBookRecords.Repository.Interface.AuthorBooksRepo;
 import com.booksrecords.demo.MVPBookRecords.Repository.Interface.Book_RentsRepo;
@@ -15,23 +16,24 @@ import java.util.Optional;
 
 @Service
 public class FindTop3BooksServiceImpl implements FindTop3BooksService {
-    private Book_RentsRepo bookRentsRepo;
-    private AuthorBooksRepo authorBooksRepo;
-    private CountryDataUtils countryDataUtils;
-    private Test test;
+    private final Book_RentsRepo bookRentsRepo;
+    private final AuthorBooksRepo authorBooksRepo;
+    private final CountryDataUtils countryDataUtils;
 
     @Autowired
-    public FindTop3BooksServiceImpl(Book_RentsRepo bookRentsRepo, AuthorBooksRepo authorBooksRepo, CountryDataUtils countryDataUtils, Test test) {
+    public FindTop3BooksServiceImpl(Book_RentsRepo bookRentsRepo, AuthorBooksRepo authorBooksRepo, CountryDataUtils countryDataUtils) {
         this.bookRentsRepo = bookRentsRepo;
         this.authorBooksRepo = authorBooksRepo;
         this.countryDataUtils = countryDataUtils;
-        this.test = test;
     }
 
     @Override
     @Transactional
     public List<Top3Books> findTop3BooksRented(String country) {
         long countryCode = countryDataUtils.getCountryCode(country);
+        if (countryCode == 0){
+            throw new CountryNotFoundException("Invalid Parameter");
+        }
 
         List<Books> bookRentsList = bookRentsRepo.findTop3BooksRented();
         if (bookRentsList.isEmpty())
@@ -51,8 +53,6 @@ public class FindTop3BooksServiceImpl implements FindTop3BooksService {
                 top3Data.setBorrower(borrowerList);
 
                 top3BooksList.add(top3Data);
-            }else {
-
             }
         }
         return top3BooksList;

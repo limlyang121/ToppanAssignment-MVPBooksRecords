@@ -34,7 +34,7 @@ public class AuthorBooksImpl implements AuthorBooksRepo {
     @Override
     public Author_Books save(Author_Books authorBooks) {
         try{
-            entityManager.merge(authorBooks);
+            entityManager.persist(authorBooks);
             return authorBooks;
         }catch (Exception e){
             System.out.println(e);

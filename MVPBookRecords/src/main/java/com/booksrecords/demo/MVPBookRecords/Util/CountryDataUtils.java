@@ -51,7 +51,7 @@ public class CountryDataUtils {
         try{
             return countryDataMap.get(country).getCountryCode();
         }catch(NullPointerException e){
-            throw new CountryNotFoundException("invalid parameter");
+            return 0;
         }
     }
 
