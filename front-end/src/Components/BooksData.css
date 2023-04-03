@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    max-width: fit-content;
+    height: fit-content;
+    padding: 20px;
+}
+
+.rectangle {
+    background-color: #F7ECEC;
+    padding: 0px 25px;
+    margin-bottom: 12px;
+    min-height: 108px;
+    min-width: 409px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.454);
+}
+
+
+.bookInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+
+.authorInfo {
+    z-index: 2;
+    position: absolute;
+    right: 15px;
+    top: 66px;
+
+}
+
+.authorInfo p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.borrowerInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  

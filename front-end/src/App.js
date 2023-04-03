@@ -1,25 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+import CountryButton from './Components/CountryButton';
+import { findTop3BooksAPI } from './APIFetch';
+import BooksData from './Components/BooksData';
 
 function App() {
+  const [countryData, setCountryData] = useState("AF");
+  const [dataFound, setDataFound] = useState(0);
+  const [bookData, setBookData] = useState([]);
+
+  useEffect(() => {
+    const fetchTop3BooksGlobally = async (countryName) => {
+      let response = await findTop3BooksAPI(countryName);
+      if (response.message === "Invalid Parameter" || response.message === "No Results") {
+        setBookData([]);
+      } else {
+        setBookData(response);
+      }
+    }
+
+    
+    fetchTop3BooksGlobally(countryData);
+
+  }, [])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div>
+      <div className='header'>
+        <CountryButton countryName={countryData} />
+
+      </div>
+      <div className='content'>
+        <BooksData BooksData={bookData} />
+      </div>
     </div>
+
   );
 }
 
 export default App;
+
