@@ -12,9 +12,9 @@
 .rectangle {
     background-color: #F7ECEC;
     padding: 0px 25px;
-    margin-bottom: 12px;
-    min-height: 108px;
-    min-width: 409px;
+    margin-bottom: 20px;
+    min-height: 90px;
+    min-width: 300px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -30,12 +30,26 @@
     position: relative;
 }
 
+.bookInfo h1 {
+    font-style: normal;
+}
+
+.book-toggle {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+svg{
+    margin-left: 20px;
+}
+
 
 .authorInfo {
     z-index: 2;
     position: absolute;
     right: 15px;
-    top: 66px;
+    top: 55px;
 
 }
 
@@ -49,5 +63,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
+}
+
+.error-message {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    padding: 0 !important;
+
+}

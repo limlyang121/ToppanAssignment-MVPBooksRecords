@@ -1,6 +1,6 @@
 package com.booksrecords.demo.MVPBookRecords.Service;
 
-import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books;
+import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books.Top3Books;
 import com.booksrecords.demo.MVPBookRecords.Entity.Books;
 import com.booksrecords.demo.MVPBookRecords.ExceptionHandling.CountryNotFoundException;
 import com.booksrecords.demo.MVPBookRecords.ExceptionHandling.NoBookResultException;

@@ -1,4 +1,4 @@
-package com.booksrecords.demo.MVPBookRecords.DTO;
+package com.booksrecords.demo.MVPBookRecords.DTO.Top3Books;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

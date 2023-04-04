@@ -4,32 +4,26 @@ import com.booksrecords.demo.MVPBookRecords.Repository.Interface.CrudPeopleRepo;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import java.util.Date;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-public class PersonTest {
+public class PeopleTest {
     private final EntityManager entityManager;
-    private final CrudPeopleRepo crudPeopleRepo;
     private People people;
 
     @Autowired
-    public PersonTest(EntityManager entityManager, CrudPeopleRepo crudPeopleRepo) {
+    public PeopleTest(EntityManager entityManager) {
         this.entityManager = entityManager;
-        this.crudPeopleRepo = crudPeopleRepo;
     }
 
     @BeforeEach
     void setUp(){
         people = new People();
-        People people = new People();
 
         people.setName("Edy Kelvianto");
         people.setUpdatedAt(new Date());
@@ -40,9 +34,10 @@ public class PersonTest {
     @Test
     @Transactional
     public void Create() {
+        assertEquals(0, people.getId());
         entityManager.persist(people);
         entityManager.flush();
-        assertNotNull(people.getId());
+        assertNotEquals(0, people.getId());
     }
 
 
@@ -54,10 +49,12 @@ public class PersonTest {
 
         People tempPeople = entityManager.find(People.class, people.getId());
         tempPeople.setName("Tweyen");
+        tempPeople.setUpdatedAt(new Date());
 
         entityManager.merge(tempPeople);
+        entityManager.flush();
         people = entityManager.find(People.class, tempPeople.getId());
-        assertEquals("Tweyen", people.getName());
+        assertEquals(people, tempPeople );
     }
 
     @Test

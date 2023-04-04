@@ -8,9 +8,7 @@ import org.springframework.util.ResourceUtils;
 
 import javax.annotation.PostConstruct;
 import java.io.*;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Component
 public class CountryDataUtils {
@@ -36,8 +34,8 @@ public class CountryDataUtils {
             for (String[] data : allMyData){
                 CountryData tempData = new CountryData();
                 tempData.setCountryName(data[0]);
-                tempData.setCountryName(data[1]);
-                tempData.setCountryCode(Long.parseLong(data[2]));
+                tempData.setCountryCode(data[1]);
+                tempData.setCountryNumber(Long.parseLong(data[2]));
                 countryDataMap.put(data[1], tempData);
             }
         }catch (Exception e){
@@ -49,10 +47,24 @@ public class CountryDataUtils {
 
     public  long getCountryCode (String country){
         try{
-            return countryDataMap.get(country).getCountryCode();
+            return countryDataMap.get(country).getCountryNumber();
         }catch(NullPointerException e){
             return 0;
         }
+    }
+
+    public CountryData getRandomCountry(){
+        try{
+            Random rd = new Random();
+            List<String> countryKeyList = new ArrayList<>(countryDataMap.keySet());
+            int randomIndex = rd.nextInt(countryKeyList.size());
+
+            String randomCountry = countryKeyList.get(randomIndex);
+            return countryDataMap.get(randomCountry);
+        }catch (Exception e){
+            return null;
+        }
+
     }
 
 

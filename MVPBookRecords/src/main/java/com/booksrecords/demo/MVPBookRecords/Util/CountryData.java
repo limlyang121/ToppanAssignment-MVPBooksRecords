@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CountryData {
     private String countryName;
-    private String shortName;
-    private long countryCode;
+    private String countryCode;
+    private long countryNumber;
 
 }

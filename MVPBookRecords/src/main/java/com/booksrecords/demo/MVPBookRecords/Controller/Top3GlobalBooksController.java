@@ -1,15 +1,9 @@
 package com.booksrecords.demo.MVPBookRecords.Controller;
 
-import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books;
-import com.booksrecords.demo.MVPBookRecords.Entity.*;
-import com.booksrecords.demo.MVPBookRecords.Repository.Interface.*;
+import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books.Top3Books;
 import com.booksrecords.demo.MVPBookRecords.Service.FindTop3BooksService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @RestController

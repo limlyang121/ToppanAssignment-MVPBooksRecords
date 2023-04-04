@@ -6,7 +6,15 @@ export default function BorrowerInfo({ borrowerInfo }) {
         borrowerInfo.map((borrower) => {
             return (
                 <div className="customer" id="customer">
-                    <p>{borrower} </p>
+                    {borrower !== null ? (
+                        <p>{borrower} </p>
+                    ) :
+                        (
+                            <div className="borrowerNull" id="borrowerNull">
+                                <p>Null</p>
+                            </div>
+                        )
+                    }
                 </div>
             )
         })

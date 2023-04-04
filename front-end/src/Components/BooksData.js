@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "./BooksData.css";
 import BorrowerInfo from "./BorrowerInfo";
+import { ReactComponent as Arrow } from "../Assest/arrow.svg";
+
 
 export default function BooksData({ BooksData }) {
+    const [showBorrower, setShowBorrower] = useState([0, 0, 0]);
+
+    const changeDisplayBorrower = (idx) => {
+        let updated = [0, 0, 0];
+        if (showBorrower[idx] === 0)
+            updated[idx] = 1;
+
+        setShowBorrower(updated);
+
+    }
+
     return (
         <div className="container" id="container">
             {BooksData.length !== 0 ? (
@@ -14,8 +27,11 @@ export default function BooksData({ BooksData }) {
                                     <h1>{`${idx + 1}  ${book.name}`} </h1>
                                     <button
                                         className="book-toggle"
-                                        id="book-toggle" >
-                                        A
+                                        id="book-toggle"
+                                        onClick={() => changeDisplayBorrower(idx)}
+
+                                    >
+                                        <Arrow />
                                     </button>
                                 </div>
 
@@ -25,14 +41,22 @@ export default function BooksData({ BooksData }) {
 
                             </div>
                             <div className="borrowerInfo">
-                                <BorrowerInfo borrowerInfo={book.borrower} />
+                                {showBorrower[idx] === 1 ? (
+                                    <BorrowerInfo borrowerInfo={book.borrower} />
+                                ) : (
+                                    null
+                                )}
                             </div>
+
 
                         </React.Fragment>
                     )
                 })
             ) : (
-                <p>The book list is empty.</p>
+                <div className="error-message" id="error-message">
+                    <p> No Data Found</p>
+
+                </div>
 
             )}
         </div>
