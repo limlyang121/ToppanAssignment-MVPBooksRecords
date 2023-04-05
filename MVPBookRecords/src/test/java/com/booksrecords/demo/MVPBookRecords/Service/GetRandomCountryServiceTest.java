@@ -16,6 +16,7 @@ public class GetRandomCountryServiceTest {
     }
 
     @Test
+    //Mainly to see that the result won't result in null;
     void GetRandomCountryRun100Times() {
         for (int i = 0 ; i < 100 ; i++){
             assertNotNull(getRandomCountryService.getRandomCountry());

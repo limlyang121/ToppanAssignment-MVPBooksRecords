@@ -1,6 +1,6 @@
 package com.booksrecords.demo.MVPBookRecords.Controller;
 
-import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books.Top3Books;
+import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books.Top3BooksDTO;
 import com.booksrecords.demo.MVPBookRecords.Service.FindTop3BooksService;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +16,8 @@ public class Top3GlobalBooksController {
     }
 
     @GetMapping("getTop3ReadBooks")
-    public List<Top3Books> getTop3Books(@RequestParam("country_code") String countryCode) {
-        List<Top3Books> top3BooksList = findTop3BooksService.findTop3BooksRented(countryCode);
+    public List<Top3BooksDTO> getTop3Books(@RequestParam("country_code") String countryCode) {
+        List<Top3BooksDTO> top3BooksList = findTop3BooksService.findTop3BooksRented(countryCode);
 
         return top3BooksList;
     }

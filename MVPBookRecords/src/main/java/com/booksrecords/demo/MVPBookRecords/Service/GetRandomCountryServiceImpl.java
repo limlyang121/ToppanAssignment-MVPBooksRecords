@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class GetRandomCountryServiceImpl implements GetRandomCountryService{
 
-    private CountryDataUtils countryDataUtils;
+    private final CountryDataUtils countryDataUtils;
 
     @Autowired
     public GetRandomCountryServiceImpl(CountryDataUtils countryDataUtils) {

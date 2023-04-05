@@ -1,6 +1,7 @@
 package com.booksrecords.demo.MVPBookRecords.Entity;
 
 import com.booksrecords.demo.MVPBookRecords.Repository.Interface.CrudPeopleRepo;
+import com.booksrecords.demo.MVPBookRecords.Util.CountryDataUtils;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,11 +15,13 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 public class PeopleTest {
     private final EntityManager entityManager;
+    private final CountryDataUtils countryDataUtils;
     private People people;
 
     @Autowired
-    public PeopleTest(EntityManager entityManager) {
+    public PeopleTest(EntityManager entityManager, CountryDataUtils countryDataUtils) {
         this.entityManager = entityManager;
+        this.countryDataUtils = countryDataUtils;
     }
 
     @BeforeEach
@@ -73,5 +76,6 @@ public class PeopleTest {
         tempPeople = entityManager.find(People.class, people.getId());
         assertNull(tempPeople);
     }
+
 
 }

@@ -1,4 +1,8 @@
---this is the people table
+CREATE SEQUENCE IF NOT EXISTS people_id_seq;
+CREATE SEQUENCE IF NOT EXISTS books_id_seq;
+CREATE SEQUENCE IF NOT EXISTS authors_id_seq;
+
+
 CREATE TABLE IF NOT EXISTS people
 (
     id integer NOT NULL DEFAULT nextval('people_id_seq'::regclass),

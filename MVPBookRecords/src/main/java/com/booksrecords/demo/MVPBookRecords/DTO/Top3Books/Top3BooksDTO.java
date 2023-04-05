@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Top3Books {
+public class Top3BooksDTO {
     private String author;
     private String name;
     private String[] borrower;

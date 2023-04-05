@@ -1,6 +1,6 @@
 package com.booksrecords.demo.MVPBookRecords.Service;
 
-import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books.Top3Books;
+import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books.Top3BooksDTO;
 import com.booksrecords.demo.MVPBookRecords.Entity.Books;
 import com.booksrecords.demo.MVPBookRecords.ExceptionHandling.CountryNotFoundException;
 import com.booksrecords.demo.MVPBookRecords.ExceptionHandling.NoBookResultException;
@@ -29,7 +29,7 @@ public class FindTop3BooksServiceImpl implements FindTop3BooksService {
 
     @Override
     @Transactional
-    public List<Top3Books> findTop3BooksRented(String country) {
+    public List<Top3BooksDTO> findTop3BooksRented(String country) {
         long countryCode = countryDataUtils.getCountryCode(country);
         if (countryCode == 0){
             throw new CountryNotFoundException("Invalid Parameter");
@@ -39,10 +39,10 @@ public class FindTop3BooksServiceImpl implements FindTop3BooksService {
         if (bookRentsList.isEmpty())
             throw new NoBookResultException("No Results");
 
-        List<Top3Books> top3BooksList = new ArrayList<>(3);
+        List<Top3BooksDTO> top3BooksList = new ArrayList<>(3);
 
         for (Books books : bookRentsList){
-            Top3Books top3Data = new Top3Books();
+            Top3BooksDTO top3Data = new Top3BooksDTO();
             top3Data.setName(books.getName());
 
             Optional<String> authors = authorBooksRepo.findAuthorsByBookID(books.getId());

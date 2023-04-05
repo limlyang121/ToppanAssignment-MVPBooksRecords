@@ -1,6 +1,6 @@
 package com.booksrecords.demo.MVPBookRecords.Service;
 
-import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books.Top3Books;
+import com.booksrecords.demo.MVPBookRecords.DTO.Top3Books.Top3BooksDTO;
 import com.booksrecords.demo.MVPBookRecords.Entity.*;
 import com.booksrecords.demo.MVPBookRecords.ExceptionHandling.CountryNotFoundException;
 import com.booksrecords.demo.MVPBookRecords.Repository.Interface.*;
@@ -131,7 +131,8 @@ public class FindTop3BooksServiceTest {
         addNewBookRents(person1, books3, 3);
         addNewBookRents(person2, books4, 10);
 
-        List<Top3Books> top3Books = findTop3BooksService.findTop3BooksRented("SG");
+
+        List<Top3BooksDTO> top3Books = findTop3BooksService.findTop3BooksRented("SG");
         assertTrue(top3Books.size() == 3);
     }
 

@@ -20,13 +20,12 @@ public class CountryDataUtils {
     }
 
     private HashMap<String, CountryData> countryDataMap;
-    private static final String filePath = "CountryList.csv";
 
     @PostConstruct
     public  Map<String, CountryData> readCSV() throws IOException {
         countryDataMap = new HashMap<>();
         try {
-            File file = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + filePath);
+            File file = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "CountryList.csv");
             FileReader fileReader = new FileReader(file);
 
             com.opencsv.CSVReader csvReader = new CSVReaderBuilder(fileReader).withSkipLines(1).build();

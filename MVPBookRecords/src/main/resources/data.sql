@@ -4,7 +4,6 @@ TRUNCATE authors, books, people, author_books, book_rents;
 -- For performance testing purposes
 
 INSERT INTO books (id, name, "createdAt", "updatedAt")
--- VALUES (generate_series(1,20), arrays.firstnames[1 + trunc(random() * (ARRAY_LENGTH(arrays.firstnames,1))) ] || ' ' || arrays.lastnames[1 + trunc(random() * (ARRAY_LENGTH(arrays.lastnames,1))) ], '20120618', NOW() + (random() * (NOW()+'90 days' - NOW())) + '30 days');
 VALUES (generate_series(1,20),   substring(md5(random()::text) from 1 for 15) , '20120618', NOW() + (random() * (NOW()+'90 days' - NOW())) + '30 days');
 
 
@@ -20,7 +19,7 @@ VALUES (generate_series(1,20), generate_series(1,20), '2020-07-01 19:10:25', '20
 
 do'
 BEGIN
-    for r in 1..100000 loop
+    for i in 1..100000 loop
             INSERT INTO book_rents (person_id, book_id, "createdAt", "updatedAt") VALUES (floor(random() * 100 + 1), floor(random() * 20 + 1)::int, ''2020-07-01 19:10:25'' , ''2020-07-01 19:10:25'');
         end loop;
 END;
