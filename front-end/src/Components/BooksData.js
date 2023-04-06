@@ -18,16 +18,22 @@ export default function BooksData({ BooksData }) {
 
     return (
         <div className="container" id="container">
-            {BooksData.length !== 0 ? (
+
+            {/* Just add extra stability incase of different error message */}
+            {Array.isArray(BooksData) && BooksData.length !== 0 ? (
                 BooksData.map((book, idx) => {
                     return (
                         <React.Fragment key={`book-${idx}`}>
-                            <div className="rectangle" id={`book-item-${idx + 1}`}   >
+                            <div className="book-item" id={`book-item-${idx + 1}`}   >
                                 <div className="bookInfo">
-                                    <h1>{`${idx + 1}  ${book.name}`} </h1>
+                                    <p className="bookInfoLeft"   > {`${idx + 1}`}</p>
+                                    <p className="bookInfoCenter" > {book.name} </p>
+
+                                    {/* <h1>{`${idx + 1}  Book Name ${idx+1}`} </h1> */}
                                     <button
                                         className="book-toggle"
                                         id="book-toggle"
+                                        style={{ justifyContent: "flex-end" }}
                                         onClick={() => changeDisplayBorrower(idx)}
 
                                     >
@@ -50,6 +56,7 @@ export default function BooksData({ BooksData }) {
 
 
                         </React.Fragment>
+
                     )
                 })
             ) : (
@@ -59,6 +66,7 @@ export default function BooksData({ BooksData }) {
                 </div>
 
             )}
+
         </div>
     );
 }

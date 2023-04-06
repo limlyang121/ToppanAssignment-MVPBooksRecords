@@ -3,9 +3,11 @@ import { useCallback, useEffect, useState } from 'react';
 import CountryButton from './Components/CountryButton';
 import { GetRandomCountryAPI, findTop3BooksAPI } from './APIFetch';
 import BooksData from './Components/BooksData';
+import "@fontsource/inter/500.css"; 
+
 
 function App() {
-  const [countryData, setCountryData] = useState("SG");
+  const [countryCode, setCountryData] = useState("SG");
   const [bookData, setBookData] = useState([]);
 
   const getRandomCountry = useCallback (async  () => {
@@ -25,16 +27,15 @@ function App() {
       }
     }
 
-    fetchTop3BooksGlobally(countryData);
+    fetchTop3BooksGlobally(countryCode);
 
-  }, [countryData, getRandomCountry])
+  }, [countryCode, getRandomCountry])
 
 
   return (
-
-    <div>
+    <div className='pageSize'>
       <div className='header'>
-        <CountryButton countryName={countryData} getRandomCountry={getRandomCountry} />
+        <CountryButton countryCode={countryCode} getRandomCountry={getRandomCountry} />
 
       </div>
       <div className='content'>

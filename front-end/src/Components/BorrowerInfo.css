@@ -1,11 +1,21 @@
 .customer {
   background-color: #f4cfcf;
   border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  min-width: 280px;
-  width: fit-content;
-  padding: 10px;
-  max-height: 80px;
-  margin-bottom: 12px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.482);
+  min-width: 331px;
+  min-height: 79px;
   text-align: center;
+}
+
+.customer:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.customer p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
 }

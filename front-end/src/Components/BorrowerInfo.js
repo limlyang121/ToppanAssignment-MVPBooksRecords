@@ -1,21 +1,23 @@
+import React from "react"
 import "./BorrowerInfo.css"
-
 
 export default function BorrowerInfo({ borrowerInfo }) {
     return (
-        borrowerInfo.map((borrower) => {
+        borrowerInfo.map((borrower, idx) => {
             return (
-                <div className="customer" id="customer">
-                    {borrower !== null ? (
-                        <p>{borrower} </p>
-                    ) :
-                        (
-                            <div className="borrowerNull" id="borrowerNull">
-                                <p>Null</p>
-                            </div>
-                        )
-                    }
-                </div>
+                <React.Fragment key={idx} >
+                    <div className="customer" id="customer">
+                        {borrower !== null ? (
+                            <p>{borrower} </p>
+                        ) :
+                            (
+                                <div className="borrowerNull" id="borrowerNull">
+                                    <p>NA </p>
+                                </div>
+                            )
+                        }
+                    </div>
+                </React.Fragment>
             )
         })
     )

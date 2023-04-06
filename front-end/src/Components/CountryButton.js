@@ -2,7 +2,7 @@
 import "./CountryButton.css"
 
 
-export default function CountryButton({countryName, getRandomCountry}) {
+export default function CountryButton({countryCode, getRandomCountry}) {
 
     return (
         <button
@@ -10,7 +10,7 @@ export default function CountryButton({countryName, getRandomCountry}) {
             className='button'
             onClick={() => getRandomCountry()}
             >
-            <p>Get Country: {countryName} </p>
+            <p>Get Country: {countryCode} </p>
         </button>
     )
 }

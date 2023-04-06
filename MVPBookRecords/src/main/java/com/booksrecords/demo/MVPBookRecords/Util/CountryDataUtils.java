@@ -1,6 +1,5 @@
 package com.booksrecords.demo.MVPBookRecords.Util;
 
-import com.booksrecords.demo.MVPBookRecords.ExceptionHandling.CountryNotFoundException;
 import com.opencsv.CSVReaderBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,7 +12,6 @@ import java.util.*;
 @Component
 public class CountryDataUtils {
     private CountryData countryData;
-
     @Autowired
     public CountryDataUtils(CountryData countryData) {
         this.countryData = countryData;
@@ -25,7 +23,7 @@ public class CountryDataUtils {
     public  Map<String, CountryData> readCSV() throws IOException {
         countryDataMap = new HashMap<>();
         try {
-            File file = ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX + "CountryList.csv");
+            File file = ResourceUtils.getFile("classpath:CountryList.csv");
             FileReader fileReader = new FileReader(file);
 
             com.opencsv.CSVReader csvReader = new CSVReaderBuilder(fileReader).withSkipLines(1).build();

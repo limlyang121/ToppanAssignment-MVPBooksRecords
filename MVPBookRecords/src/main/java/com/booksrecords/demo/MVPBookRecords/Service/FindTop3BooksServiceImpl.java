@@ -50,6 +50,7 @@ public class FindTop3BooksServiceImpl implements FindTop3BooksService {
                 top3Data.setAuthor(authors.get());
 
                 List<String> borrowerList = bookRentsRepo.findTop3Borrower(countryCode, books.getId());
+
                 top3Data.setBorrower(borrowerList);
 
                 top3BooksList.add(top3Data);
