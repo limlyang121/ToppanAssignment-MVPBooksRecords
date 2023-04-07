@@ -25,7 +25,7 @@ Set-up Required Software
 
 **Download Link**  
 PostGreSQL Driver : https://www.enterprisedb.com/downloads/postgres-postgresql-downloads  (I'm Using PostgreSQL v15 and Pgadmin4)  
-Java : https://www.oracle.com/id/java/technologies/downloads/#jdk17-windows  (I'm using Java 10)  
+Java : https://www.oracle.com/id/java/technologies/downloads/#jdk17-windows  (I'm using Java 19)  
 Node.js : https://nodejs.org/en  (I'm using Node v19.7.0)  
 Git : https://git-scm.com/download/win  (I'm Using git version 2.39.2.windows.1)  
 
