@@ -26,7 +26,9 @@ The set-up assumes that the machine already has following program/software insta
 
 Section 1. Clone Github Repository
 To clone the Github Repository, go the folder/directory you want to put the repository and open cmd/UNIX and run
-```git clone https://github.com/limlyang121/MVPBooksRecords.git"```
+```
+git clone https://github.com/limlyang121/MVPBooksRecords.git
+```
 
 Section 2. Create the database in PGAdmin4
 
