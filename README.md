@@ -30,7 +30,7 @@ To clone the Github Repository, go the folder/directory you want to put the repo
 git clone https://github.com/limlyang121/MVPBooksRecords.git
 ```
 
-** Section 2. Create the database in PGAdmin4 **
+**Section 2. Create the database in PGAdmin4**
 Step 1. Set up server 
 Assume that if the Server is empty
 ![image](https://user-images.githubusercontent.com/103249985/230542497-408daff3-4f10-474f-a759-452bd2dc1383.png)
