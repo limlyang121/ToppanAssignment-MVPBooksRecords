@@ -20,32 +20,66 @@ Front-End Assumptions:
    
 The Set up guide will be on windows, linux should be easier as everything can be download via the terminal
 
-Download Link
+Set-up Required Software
 -------------------
+
+**Download Link**
 PostGreSQL Driver : https://www.enterprisedb.com/downloads/postgres-postgresql-downloads  
 Java : https://www.oracle.com/id/java/technologies/downloads/#jdk17-windows  
+Node.js : https://nodejs.org/en  
+Git : https://git-scm.com/download/win  
 
-Set-up PostGreSQL
--------------------
+**Set-up PostGreSQL (Can skip this if you already have PostgreSQL driver & Pgadmin4 installed)**
 
-  
+Step 1. Download the file and execute the "exe" file
+Step 2. A pop out installion box will appear  
+![image](https://user-images.githubusercontent.com/103249985/230619005-05b77d99-6b81-411a-b26b-6c91ffcedbfb.png)
 
-Set-up Java
--------------------
+Step 3. Next until it ask you to select which part to install  
+![image](https://user-images.githubusercontent.com/103249985/230619145-d5f092a7-6ca9-42ef-b358-95ba6d96fcd0.png)  
+for simplicity, just install eveything
+Step 4. Input the key as "1234" and port "5432" (i use those value in my spring application.properties)   
+![image](https://user-images.githubusercontent.com/103249985/230619424-57b03c9d-0875-4168-9bd2-c73e15e0afb3.png)  
+Step 5. Wait until the installation completed  
+Step 6. Now, it will ask to install Stack builder,Select the postGreSQL  
+![image](https://user-images.githubusercontent.com/103249985/230620241-f33384d2-d86d-4c1b-854b-ff9e7f49ac8d.png)  
+![image](https://user-images.githubusercontent.com/103249985/230620337-7c0fc271-13c8-4a84-ad70-9e3f02b8bcc9.png)  
+Step 7. Make sure that psqlODBC is seleced and at least one Database server is installed  
+![image](https://user-images.githubusercontent.com/103249985/230620560-dea1018f-136f-4aed-a047-462d9a02c441.png)  
+![image](https://user-images.githubusercontent.com/103249985/230620646-8b370cf2-d471-41b4-a0ef-861438e64fc3.png)  
+Step 8. Next and wait for the download to end.   
+![image](https://user-images.githubusercontent.com/103249985/230620807-b87e64c9-e9a5-4c34-abda-39a2cd10306a.png)  
+Step 9. Next again (uncheck the skip installation)  
+![image](https://user-images.githubusercontent.com/103249985/230620915-321887da-afc6-4d5f-a3ac-cec8b43f52cb.png)  
+Step 10. Next until installation completed  
+![image](https://user-images.githubusercontent.com/103249985/230621038-cba48ebb-7904-4d6a-ac04-c22c6aee5251.png)  
+Step 11. If the picture is shown, that mean the installation is completed
+
+
+**Set-up Node.js (Can skip if Node.js is installed)**    
+Download and install the executeable file.  
+
+
+**Set-up Java (Can skip if you already install and set the environment path for Path and Java_home)**  
 Step 1. download the File from the link above  
 Step 2. Install  the software/package
 Step 3. Add Java 19 bin to path with "Environment Variables"
 Step 4. Open the Path for environment variables  
 ![image](https://user-images.githubusercontent.com/103249985/230558437-f948876a-9288-49e7-8e46-353d576cf6aa.png)  
-Add java bin to Path like the picture below
+Add java bin to Path like the picture below  
 ![image](https://user-images.githubusercontent.com/103249985/230558483-9e04c129-5fac-425e-8721-893bacc86f4d.png)  
-
-Step 5. Add new Variables
+Step 5. Add new Variables  
 ![image](https://user-images.githubusercontent.com/103249985/230558654-fb6d36a3-a22a-46e6-8c9e-b36e4e682a0a.png)  
 fill the data with  
 ![image](https://user-images.githubusercontent.com/103249985/230558727-1b3045e4-84bf-4971-b85c-fd03b9bc0848.png)  
-Click ```ok, then ok again ```
-You good to go.
+Click ```ok, then ok again ```  
+You good to go.  
+
+
+**Set-up Git**
+Step 1. Downlaod and install the executable file
+Step 2. for simplicity sake, just next until the installation finished  
+
 
 
 
@@ -57,7 +91,7 @@ The set-up assumes that the machine already has following program/software insta
 3. Java (19)
 4. Git (git version 2.39.2.windows.1)
 5. Intellij 
-6. PostgreSQL Driver && PGAdmin
+6. PostgreSQL Driver (15) && PGAdmin (4) 
 
 **Section 1. Clone Github Repository**  
 To clone the Github Repository, go the folder/directory you want to put the repository and open cmd/UNIX and run
@@ -67,11 +101,11 @@ git clone https://github.com/limlyang121/MVPBooksRecords.git
 
 **Section 2. Create the database in PGAdmin4**  
 Step 1. Set up server 
-Assume that if the Server is empty  
+if the Server is empty    
 ![image](https://user-images.githubusercontent.com/103249985/230542497-408daff3-4f10-474f-a759-452bd2dc1383.png)  
-Right click -> Register -> Server
-The server name can just put "PostGreSQL15" or random
-then go to "Connection" Tab
+Right click -> Register -> Server  
+The server name can just put "PostGreSQL15" or random  
+then go to "Connection" Tab  
 
 If there is an existing server
 Right click -> Properties -> Connections  
@@ -79,7 +113,7 @@ Right click -> Properties -> Connections
 
 Fill the Data like picture below  
 ![image](https://user-images.githubusercontent.com/103249985/230542922-07a98f5a-c002-4b93-bbfd-f9fd40d691c5.png)  
-password is 1234 (need to be same in the spring application.properties
+password is 1234 (need to be same in the spring application.properties  
 
 After click save, it should look like this  
 ![image](https://user-images.githubusercontent.com/103249985/230543924-cec76fbb-e696-4f11-ba5d-18e0c571611e.png)  
@@ -98,11 +132,12 @@ If "my_database" appear like in the picture below, the st up is completed
 
 **Section 3. Setting up Backend**  
 Method 1. Using Intellij  
-using Intellij will be easier if user does not have experience terminal or cmd, User will just need to open the back-end project with "File -> Open" then select the directory like in the picture below  
+using Intellij will be easier if user does not have experience terminal or cmd.   
+User will just need to open the back-end project with "File -> Open" then select the directory like in the picture below  
 ![image](https://user-images.githubusercontent.com/103249985/230545050-00e1aa2e-8600-4ae6-a143-2884456ceaba.png)  
 it is recommend to open the project at that level (the one that in the same level as "front-end") as opening it at the root might cause some issues.
 
-After open the project, use maven to grab any dependency that in the pom file with 
+After open the project, use maven to grab any dependency that in the pom file with  
 ```
 Right click on the Project name -> Maven -> Reload Project
 ``` 
