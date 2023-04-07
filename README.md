@@ -24,12 +24,18 @@ The set-up assumes that the machine already has following program/software insta
 5. Intellij 
 6. PGAdmin4
 
-Section 1. Clone Github Repository
+#Section 1. Clone Github Repository
 To clone the Github Repository, go the folder/directory you want to put the repository and open cmd/UNIX and run
 ```
 git clone https://github.com/limlyang121/MVPBooksRecords.git
 ```
 
 Section 2. Create the database in PGAdmin4
+Assume that if the Server is empty
+![image](https://user-images.githubusercontent.com/103249985/230542497-408daff3-4f10-474f-a759-452bd2dc1383.png)
+
+Create new Server 
+![image](https://user-images.githubusercontent.com/103249985/230542922-07a98f5a-c002-4b93-bbfd-f9fd40d691c5.png)
+
 
 
