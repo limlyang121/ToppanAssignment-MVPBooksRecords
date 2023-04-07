@@ -7,10 +7,10 @@ There are several assumptions made when building the solutions. Since no questio
 
 Assumptions
 -------------------
-Back-end Assumptions:
+Back-end Assumptions:  
 1. The People database's country_code is mapped to the API call's country_code using the ISO-3611 country code standard. However, the database stores country_code as a big_int, while the API supplies country_code as a string in the form of XX (e.g. SG, MY, US, and etc). The mapping guidelines are not explicitly defined, which could lead to issues when the app is tested with Toppan's database. To address this, the project assumes that the mapping adheres to the ISO standard, and utilizes a CSV mapping from https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/slim-2/slim-2.csv. (Change later)
-2. Database structure will be created  by "schema.sql" and the data will be load with "data.sql". since there is no details about database, it is assumed that the database will be load with "data.sql" to do testing. Hence, controller is no involved in configured the data.
-Front-End Assumptions:
+2. Database structure will be created  by "schema.sql" and the data will be load with "data.sql". since there is no details about database, it is assumed that the database will be load with "data.sql" to do testing. Hence, controller is no involved in configured the data.  
+Front-End Assumptions:  
 1. Upon startup, the default country will be "SG". the country will change when the "Get Country" is clicked and recall the "getTop3ReadBooks"
 2. Since there is no details on what should we display if there is no borrower in that country, i assume that the system will just display NA. i though about just don't display any book that doesn't have borrower, but then it won't be 3 books.
 
@@ -24,13 +24,13 @@ The set-up assumes that the machine already has following program/software insta
 5. Intellij 
 6. PGAdmin4
 
-**Section 1. Clone Github Repository **
+**Section 1. Clone Github Repository**  
 To clone the Github Repository, go the folder/directory you want to put the repository and open cmd/UNIX and run
 ```
 git clone https://github.com/limlyang121/MVPBooksRecords.git
 ```
 
-**Section 2. Create the database in PGAdmin4**
+**Section 2. Create the database in PGAdmin4**  
 Step 1. Set up server 
 Assume that if the Server is empty
 ![image](https://user-images.githubusercontent.com/103249985/230542497-408daff3-4f10-474f-a759-452bd2dc1383.png)
@@ -49,7 +49,7 @@ password is 1234 (need to be same in the spring application.properties
 After click save, it should look like this
 ![image](https://user-images.githubusercontent.com/103249985/230543924-cec76fbb-e696-4f11-ba5d-18e0c571611e.png)
 
-Step 2. Create New Database with name "my_database"
+Step 2. Create New Database with name "my_database"  
 Right click on "Databases" then -> Create -> Database
 ![image](https://user-images.githubusercontent.com/103249985/230544082-8fd8090d-f111-4137-8366-067fdb982b03.png)
 
@@ -61,7 +61,7 @@ name the database with "my_database" then click save
 If "my_database" appear like in the picture below, the st up is completed
 ![image](https://user-images.githubusercontent.com/103249985/230544187-d125a09a-35e3-48e4-9d78-b6e4060879ab.png)
 
-**Section 3. Setting up Backend **
+**Section 3. Setting up Backend**  
 Method 1. Using Intellij (Recommended)
 using Intellij will simplifies the set up by a lot, User will just need to open the back-end project with "File -> Open" then select the directory like in the picture below
 ![image](https://user-images.githubusercontent.com/103249985/230545050-00e1aa2e-8600-4ae6-a143-2884456ceaba.png)
@@ -99,7 +99,7 @@ The picture above indicated that the application had run successfully.
 The database will be filled with data from "data.sql" as that is the default name to populate data, if you want to use different data sets, you can go ahead replace or rewrite the SQL command inside ```data.sql```
 
 
-**Section 4. Setting Up Front-end **
+**Section 4. Setting Up Front-end**  
 Step 1. Install necessary packages
 Go to the ```front-end``` folder/directory and open cmd/unix to run ```npm install```. this code will download all dependency needed that store in package.json. it might show some warning of vulnurabilities since i not using the latest version of the packages. but the application will run despite the warning
 Step 2. Run the Application
