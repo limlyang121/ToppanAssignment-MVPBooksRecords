@@ -130,8 +130,8 @@ name the database with "my_database" then click save
 If "my_database" appear like in the picture below, the st up is completed  
 ![image](https://user-images.githubusercontent.com/103249985/230544187-d125a09a-35e3-48e4-9d78-b6e4060879ab.png)  
 
-**Section 3. Setting up Backend**  
-***Method 1. Using Maven with CMD***   
+***Section 3. Setting up Backend(The database must be running)***  
+**Method 1. Using Maven with CMD**   
 Go to the folder/directory that have ./mvnw  
 ![image](https://user-images.githubusercontent.com/103249985/230546572-9130997c-0775-4716-adf0-142cb545bb6e.png)  
 
@@ -143,7 +143,7 @@ and type ```./mvnw spring-boot:run```
 The picture above indicated that the application had run successfully.
 (Note: first time run will download the dependency first)   
 
-***Method 2. Using Intellij***  
+**Method 2. Using Intellij**  
 using Intellij will be easier if user does not have experience terminal or cmd.   
 User will just need to open the back-end project with "File -> Open" then select the directory like in the picture below  
 ![image](https://user-images.githubusercontent.com/103249985/230545050-00e1aa2e-8600-4ae6-a143-2884456ceaba.png)  
@@ -171,7 +171,7 @@ the image above imply that the Application have run successfully
 The database will be filled with data from "data.sql" as that is the default name to populate data, if you want to use different data sets, you can go ahead replace or rewrite the SQL command inside ```data.sql```
   
 
-**Section 4. Setting Up Front-end**  
+***Section 4. Setting Up Front-end***  
 Step 1. Install necessary packages
 Go to the ```front-end``` folder/directory and open cmd/unix to run ```npm install```. this code will download all dependency needed that store in package.json. it might show some warning of vulnurabilities since i not using the latest version of the packages. but the application will run despite the warning
 Step 2. Run the Application
