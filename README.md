@@ -62,8 +62,8 @@ Download and install the executeable file.
 
 **Set-up Java (Can skip if you already install and set the environment path for Path and Java_home)**  
 Step 1. download the File from the link above  
-Step 2. Install  the software/package
-Step 3. Add Java 19 bin to path with "Environment Variables"
+Step 2. Install  the software/package  
+Step 3. Add Java 19 bin to path with "Environment Variables"  
 Step 4. Open the Path for environment variables  
 ![image](https://user-images.githubusercontent.com/103249985/230558437-f948876a-9288-49e7-8e46-353d576cf6aa.png)  
 Add java bin to Path like the picture below  
@@ -76,8 +76,8 @@ Click ```ok, then ok again ```
 You good to go.  
 
 
-**Set-up Git**
-Step 1. Downlaod and install the executable file
+**Set-up Git**  
+Step 1. Downlaod and install the executable file  
 Step 2. for simplicity sake, just next until the installation finished  
 
 
