@@ -65,8 +65,8 @@ If "my_database" appear like in the picture below, the st up is completed
 ![image](https://user-images.githubusercontent.com/103249985/230544187-d125a09a-35e3-48e4-9d78-b6e4060879ab.png)  
 
 **Section 3. Setting up Backend**  
-Method 1. Using Intellij (Recommended)
-using Intellij will simplifies the set up by a lot, User will just need to open the back-end project with "File -> Open" then select the directory like in the picture below  
+Method 1. Using Intellij  
+using Intellij will be easier if user does not have experience terminal or cmd, User will just need to open the back-end project with "File -> Open" then select the directory like in the picture below  
 ![image](https://user-images.githubusercontent.com/103249985/230545050-00e1aa2e-8600-4ae6-a143-2884456ceaba.png)  
 it is recommend to open the project at that level (the one that in the same level as "front-end") as opening it at the root might cause some issues.
 
@@ -85,8 +85,8 @@ Go to src/main/java/com/booksrecords/demo/MVPBookRecords/MvpBookRecordsApplicati
 And run the Application  
 ![image](https://user-images.githubusercontent.com/103249985/230546266-4a0a3d10-3434-4fdf-a1eb-14006b1b1db4.png)  
 
-the image above imply that the Application have run successfully
-Method 2. Using Maven with CMD
+the image above imply that the Application have run successfully   
+Method 2. Using Maven with CMD   
 Go to the folder/directory that have ./mvnw  
 ![image](https://user-images.githubusercontent.com/103249985/230546572-9130997c-0775-4716-adf0-142cb545bb6e.png)  
 
@@ -100,7 +100,7 @@ The picture above indicated that the application had run successfully.
 
 **Note**
 The database will be filled with data from "data.sql" as that is the default name to populate data, if you want to use different data sets, you can go ahead replace or rewrite the SQL command inside ```data.sql```
-
+  
 
 **Section 4. Setting Up Front-end**  
 Step 1. Install necessary packages
