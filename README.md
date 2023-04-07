@@ -23,7 +23,7 @@ The Set up guide will be on windows, linux should be easier as everything can be
 Set-up Required Software
 -------------------
 
-**Download Link**
+**Download Link**  
 PostGreSQL Driver : https://www.enterprisedb.com/downloads/postgres-postgresql-downloads  
 Java : https://www.oracle.com/id/java/technologies/downloads/#jdk17-windows  
 Node.js : https://nodejs.org/en  
