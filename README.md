@@ -24,18 +24,105 @@ The set-up assumes that the machine already has following program/software insta
 5. Intellij 
 6. PGAdmin4
 
-#Section 1. Clone Github Repository
+**Section 1. Clone Github Repository **
 To clone the Github Repository, go the folder/directory you want to put the repository and open cmd/UNIX and run
 ```
 git clone https://github.com/limlyang121/MVPBooksRecords.git
 ```
 
-Section 2. Create the database in PGAdmin4
+** Section 2. Create the database in PGAdmin4 **
+Step 1. Set up server 
 Assume that if the Server is empty
 ![image](https://user-images.githubusercontent.com/103249985/230542497-408daff3-4f10-474f-a759-452bd2dc1383.png)
+Right click -> Register -> Server
+The server name can just put "PostGreSQL15" or random
+then go to "Connection" Tab
 
-Create new Server 
+If there is an existing server
+Right click -> Properties -> Connections
+![image](https://user-images.githubusercontent.com/103249985/230543665-57b46366-7e16-4f62-90ad-a1b3851b6f26.png)
+
+Fill the Data like picture below
 ![image](https://user-images.githubusercontent.com/103249985/230542922-07a98f5a-c002-4b93-bbfd-f9fd40d691c5.png)
+password is 1234 (need to be same in the spring application.properties
+
+After click save, it should look like this
+![image](https://user-images.githubusercontent.com/103249985/230543924-cec76fbb-e696-4f11-ba5d-18e0c571611e.png)
+
+Step 2. Create New Database with name "my_database"
+Right click on "Databases" then -> Create -> Database
+![image](https://user-images.githubusercontent.com/103249985/230544082-8fd8090d-f111-4137-8366-067fdb982b03.png)
+
+
+name the database with "my_database" then click save
+![image](https://user-images.githubusercontent.com/103249985/230544144-c5a73a02-101d-468a-97e1-b633b7aeaaca.png)
+
+
+If "my_database" appear like in the picture below, the st up is completed
+![image](https://user-images.githubusercontent.com/103249985/230544187-d125a09a-35e3-48e4-9d78-b6e4060879ab.png)
+
+**Section 3. Setting up Backend **
+Method 1. Using Intellij (Recommended)
+using Intellij will simplifies the set up by a lot, User will just need to open the back-end project with "File -> Open" then select the directory like in the picture below
+![image](https://user-images.githubusercontent.com/103249985/230545050-00e1aa2e-8600-4ae6-a143-2884456ceaba.png)
+it is recommend to open the project at that level (the one that in the same level as "front-end") as opening it at the root might cause some issues.
+
+After open the project, use maven to grab any dependency that in the pom file with 
+```
+Right click on the Project name -> Maven -> Reload Project
+``` 
+Like in the picture below
+![image](https://user-images.githubusercontent.com/103249985/230545541-9bcbb6cb-1eb7-4f0f-8c87-d9c0e2eda81b.png)
+
+Wait for the Dependecy to download
+Once all the dependency had been download
+```
+Go to src/main/java/com/booksrecords/demo/MVPBookRecords/MvpBookRecordsApplication.java
+```
+And run the Application
+![image](https://user-images.githubusercontent.com/103249985/230546266-4a0a3d10-3434-4fdf-a1eb-14006b1b1db4.png)
+
+the image above imply that the Application have run successfully
+Method 2. Using Maven with CMD
+Go to the folder/directory that have ./mvnw
+![image](https://user-images.githubusercontent.com/103249985/230546572-9130997c-0775-4716-adf0-142cb545bb6e.png)
+
+Right click and open CMD or powershells
+and type ```./mvnw spring-boot:run```
+![image](https://user-images.githubusercontent.com/103249985/230546919-2d5af278-e267-4c67-94c3-6c0dd84db5bb.png)
+
+![image](https://user-images.githubusercontent.com/103249985/230546978-91141236-f576-49d2-9943-a8a1dbcccaeb.png)
+The picture above indicated that the application had run successfully.
+(Note: first time run will download the dependency first)
+
+**Note**
+The database will be filled with data from "data.sql" as that is the default name to populate data, if you want to use different data sets, you can go ahead replace or rewrite the SQL command inside ```data.sql```
+
+
+**Section 4. Setting Up Front-end **
+Step 1. Install necessary packages
+Go to the ```front-end``` folder/directory and open cmd/unix to run ```npm install```. this code will download all dependency needed that store in package.json. it might show some warning of vulnurabilities since i not using the latest version of the packages. but the application will run despite the warning
+Step 2. Run the Application
+after the dependency installed successfully, just need to type npm start incmd/unix terminal and it should automatically open your default browser and load the page ```http://localhost:3000/```
+it should book up the page like below
+
+![image](https://user-images.githubusercontent.com/103249985/230548072-32a862b8-f485-498d-ba97-18d0460eb654.png)
+
+if no borrower
+![image](https://user-images.githubusercontent.com/103249985/230548121-ea32a922-6915-4b4b-b7e9-fe04f31e246e.png)
+
+
+
+Last Note
+-------------------
+if you encounter any problems during the set up, feel free to contant me using my emails which is "limlyang121@outlook.com"
+Thanks you
+
+
+
+
+
+
 
 
 
