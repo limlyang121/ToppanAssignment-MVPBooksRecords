@@ -1,9 +1,9 @@
 Introduction
 -------------------
-This project is created as part of the Toppan FullStack Developer Assessment.
-The Original problem can be found at https://github.com/RyanToppan/CoDev-Assignment-FullStack-Spring.
+This project is created as part of the Toppan FullStack Developer Assessment.  
+The Original problem can be found at https://github.com/RyanToppan/CoDev-Assignment-FullStack-Spring.  
 
-There are several assumptions made when building the solutions. Since no questions are allowed to be asked to clarify, the next section will list some of the important assumptions and elaborate on why the are Made
+There are several assumptions made when building the solutions. Since no questions are allowed to be asked to clarify, the next section will list some of the important assumptions and elaborate on why the are Made  
 
 Assumptions
 -------------------
@@ -18,7 +18,7 @@ Front-End Assumptions:
 2. Since there is no details on what should we display if there is no borrower in that country, i assume that the system will just display NA. i though about just don't display any book that doesn't have borrower, but then it won't be 3 books.
 
    
-The Set up guide will be on windows, linux should be easier as everything can be download via the terminal
+The Set up guide will be on windows, linux should be easier as everything can be download via the terminal  
 
 Set-up Required Software
 -------------------
@@ -179,7 +179,10 @@ it should book up the page like below
 ![image](https://user-images.githubusercontent.com/103249985/230548072-32a862b8-f485-498d-ba97-18d0460eb654.png)
 
 if no borrower
-![image](https://user-images.githubusercontent.com/103249985/230548121-ea32a922-6915-4b4b-b7e9-fe04f31e246e.png)
+![image](https://user-images.githubusercontent.com/103249985/230548121-ea32a922-6915-4b4b-b7e9-fe04f31e246e.png)  
+
+If Invalid Parameter or no result  
+![image](https://user-images.githubusercontent.com/103249985/230623799-61e8b79e-fafd-4c4b-86e7-26e2e798fff5.png)  
 
 
 
