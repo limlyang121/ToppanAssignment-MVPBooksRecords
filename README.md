@@ -33,11 +33,11 @@ Git : https://git-scm.com/download/win  (I'm Using git version 2.39.2.windows.1)
 
 Step 1. Download the file and execute the "exe" file
 Step 2. A pop out installion box will appear  
-![image](https://user-images.githubusercontent.com/103249985/230619005-05b77d99-6b81-411a-b26b-6c91ffcedbfb.png)
+![image](https://user-images.githubusercontent.com/103249985/230619005-05b77d99-6b81-411a-b26b-6c91ffcedbfb.png)  
 
 Step 3. Next until it ask you to select which part to install  
 ![image](https://user-images.githubusercontent.com/103249985/230619145-d5f092a7-6ca9-42ef-b358-95ba6d96fcd0.png)  
-for simplicity, just install eveything
+for simplicity, just install eveything  
 Step 4. Input the key as "1234" and port "5432" (i use those value in my spring application.properties)   
 ![image](https://user-images.githubusercontent.com/103249985/230619424-57b03c9d-0875-4168-9bd2-c73e15e0afb3.png)  
 Step 5. Wait until the installation completed  
