@@ -24,10 +24,10 @@ Set-up Required Software
 -------------------
 
 **Download Link**  
-PostGreSQL Driver : https://www.enterprisedb.com/downloads/postgres-postgresql-downloads  
-Java : https://www.oracle.com/id/java/technologies/downloads/#jdk17-windows  
-Node.js : https://nodejs.org/en  
-Git : https://git-scm.com/download/win  
+PostGreSQL Driver : https://www.enterprisedb.com/downloads/postgres-postgresql-downloads  (I'm Using PostgreSQL v15 and Pgadmin4)  
+Java : https://www.oracle.com/id/java/technologies/downloads/#jdk17-windows  (I'm using Java 10)  
+Node.js : https://nodejs.org/en  (I'm using Node v19.7.0)  
+Git : https://git-scm.com/download/win  (I'm Using git version 2.39.2.windows.1)  
 
 **Set-up PostGreSQL (Can skip this if you already have PostgreSQL driver & Pgadmin4 installed)**
 
@@ -131,7 +131,19 @@ If "my_database" appear like in the picture below, the st up is completed
 ![image](https://user-images.githubusercontent.com/103249985/230544187-d125a09a-35e3-48e4-9d78-b6e4060879ab.png)  
 
 **Section 3. Setting up Backend**  
-Method 1. Using Intellij  
+***Method 1. Using Maven with CMD***   
+Go to the folder/directory that have ./mvnw  
+![image](https://user-images.githubusercontent.com/103249985/230546572-9130997c-0775-4716-adf0-142cb545bb6e.png)  
+
+Right click and open CMD or powershells
+and type ```./mvnw spring-boot:run```  
+![image](https://user-images.githubusercontent.com/103249985/230546919-2d5af278-e267-4c67-94c3-6c0dd84db5bb.png)  
+
+![image](https://user-images.githubusercontent.com/103249985/230546978-91141236-f576-49d2-9943-a8a1dbcccaeb.png)  
+The picture above indicated that the application had run successfully.
+(Note: first time run will download the dependency first)   
+
+***Method 2. Using Intellij***  
 using Intellij will be easier if user does not have experience terminal or cmd.   
 User will just need to open the back-end project with "File -> Open" then select the directory like in the picture below  
 ![image](https://user-images.githubusercontent.com/103249985/230545050-00e1aa2e-8600-4ae6-a143-2884456ceaba.png)  
@@ -153,17 +165,7 @@ And run the Application
 ![image](https://user-images.githubusercontent.com/103249985/230546266-4a0a3d10-3434-4fdf-a1eb-14006b1b1db4.png)  
 
 the image above imply that the Application have run successfully   
-Method 2. Using Maven with CMD   
-Go to the folder/directory that have ./mvnw  
-![image](https://user-images.githubusercontent.com/103249985/230546572-9130997c-0775-4716-adf0-142cb545bb6e.png)  
 
-Right click and open CMD or powershells
-and type ```./mvnw spring-boot:run```  
-![image](https://user-images.githubusercontent.com/103249985/230546919-2d5af278-e267-4c67-94c3-6c0dd84db5bb.png)  
-
-![image](https://user-images.githubusercontent.com/103249985/230546978-91141236-f576-49d2-9943-a8a1dbcccaeb.png)  
-The picture above indicated that the application had run successfully.
-(Note: first time run will download the dependency first)
 
 **Note**
 The database will be filled with data from "data.sql" as that is the default name to populate data, if you want to use different data sets, you can go ahead replace or rewrite the SQL command inside ```data.sql```
