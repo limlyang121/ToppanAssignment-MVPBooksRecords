@@ -90,8 +90,8 @@ The set-up assumes that the machine already has following program/software insta
 2. Npm (9.5.1)
 3. Java (19)
 4. Git (git version 2.39.2.windows.1)
-5. Intellij 
-6. PostgreSQL Driver (15) && PGAdmin (4) 
+5. PostgreSQL Driver (15) && PGAdmin (4) 
+6. Intellij (Optional)
 
 **Section 1. Clone Github Repository**  
 To clone the Github Repository, go the folder/directory you want to put the repository and open cmd/UNIX and run
