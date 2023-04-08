@@ -175,7 +175,7 @@ The database will be filled with data from "data.sql" as that is the default nam
 Step 1. Install necessary packages
 Go to the ```front-end``` folder/directory and open cmd/unix to run ```npm install```. this code will download all dependency needed that store in package.json. it might show some warning of vulnurabilities since i not using the latest version of the packages. but the application will run despite the warning
 Step 2. Run the Application
-after the dependency installed successfully, just need to type npm start incmd/unix terminal and it should automatically open your default browser and load the page ```http://localhost:3000/```
+after the dependency installed successfully, just need to type ```npm start``` in cmd/unix terminal and it should automatically open your default browser and load the page ```http://localhost:3000/```
 it should book up the page like below  
 
 ![image](https://user-images.githubusercontent.com/103249985/230548072-32a862b8-f485-498d-ba97-18d0460eb654.png)
@@ -192,6 +192,10 @@ Last Note
 -------------------
 if you encounter any problems during the set up, feel free to contant me using my emails which is "limlyang121@outlook.com"
 Thanks you
+
+Spring Test Result   
+-------------------  
+![image](https://user-images.githubusercontent.com/103249985/230704620-3b23e496-c9b3-4305-886e-7d25ea687341.png)  
 
 
 
