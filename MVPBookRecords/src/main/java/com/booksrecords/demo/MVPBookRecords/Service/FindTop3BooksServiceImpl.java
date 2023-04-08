@@ -8,6 +8,7 @@ import com.booksrecords.demo.MVPBookRecords.Repository.Interface.AuthorBooksRepo
 import com.booksrecords.demo.MVPBookRecords.Repository.Interface.Book_RentsRepo;
 import com.booksrecords.demo.MVPBookRecords.Util.CountryDataUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class FindTop3BooksServiceImpl implements FindTop3BooksService {
 
     @Override
     @Transactional
+    @Cacheable("findTop3BooksRented")
     public List<Top3BooksDTO> findTop3BooksRented(String country) {
         long countryCode = countryDataUtils.getCountryCode(country);
         if (countryCode == 0){
