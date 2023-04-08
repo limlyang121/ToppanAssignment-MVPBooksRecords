@@ -9,7 +9,7 @@ Assumptions
 -------------------
 Back-end Assumptions:  
 1. The People database's country_code is mapped to the API call's country_code using the ISO-3611 country code standard. However, the database stores country_code as a big_int, while the API supplies country_code as a string in the form of XX (e.g. SG, MY, US, and etc). The mapping guidelines are not explicitly defined, which could lead to issues when the app is tested with Toppan's database. To address this, the project assumes that the mapping adheres to the ISO standard, and utilizes a CSV mapping from https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/slim-2/slim-2.csv.  
-2. Database structure will be created  by "schema.sql" and the data will be load with "data.sql". since there is no details about database, it is assumed that the database will be load with "data.sql" to do testing. Hence, controller is no involved in configured the data.  
+2. Database structure will be created  by "schema.sql" and the data will be load with "data.sql". since there is no details about database, it is assumed that the database will be load with "data.sql" to do testing.   
 
   
 
