@@ -24,7 +24,7 @@ Setting Up Project
 The set-up assumes that the machine already has following program/software installed (The number in bracket is my version of that software)
 1. ReactJS(18.2.0)
 2. Npm (9.5.1)
-3. Java (19)
+3. Java (19) (Set path environment and JAVA_HOME)  
 4. Git (git version 2.39.2.windows.1)
 5. PostgreSQL Driver (15) && PGAdmin (4) 
 6. Intellij (Optional)
