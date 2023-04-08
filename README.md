@@ -17,17 +17,7 @@ Front-End Assumptions:
 1. Upon startup, the default country will be "SG". the country will change when the "Get Country" is clicked and recall the "getTop3ReadBooks"
 2. Since there is no details on what should we display if there is no borrower in that country, i assume that the system will just display NA. i though about just don't display any book that doesn't have borrower, but then it won't be 3 books.
 
-   
-The Set up guide will be on windows, linux should be easier as everything can be download via the terminal  
 
-Set-up Required Software
--------------------
-
-**Download Link**  
-PostGreSQL Driver : https://www.enterprisedb.com/downloads/postgres-postgresql-downloads  (I'm Using PostgreSQL v15 and Pgadmin4)  
-Java : https://www.oracle.com/id/java/technologies/downloads/#jdk17-windows  (I'm using Java 19)  
-Node.js : https://nodejs.org/en  (I'm using Node v18.2.0)  
-Git : https://git-scm.com/download/win  (I'm Using git version 2.39.2.windows.1)  
 
 Setting Up Project
 -------------------
