@@ -8,6 +8,7 @@ export default function CountryButton({countryCode, getRandomCountry}) {
         <button
             id='action-btn'
             className='button'
+            data-testid='action-btn'
             onClick={() => getRandomCountry()}
             >
             <p>Get Country: {countryCode} </p>

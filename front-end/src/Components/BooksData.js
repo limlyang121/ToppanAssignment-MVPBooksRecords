@@ -18,13 +18,12 @@ export default function BooksData({ BooksData }) {
 
     return (
         <div className="container" id="container">
-
             {/* Just add extra stability incase of different error message */}
             {Array.isArray(BooksData) && BooksData.length !== 0 ? (
                 BooksData.map((book, idx) => {
                     return (
                         <React.Fragment key={`book-${idx}`}>
-                            <div className="book-item" id={`book-item-${idx + 1}`}   >
+                            <div className="book-item" id={`book-item-${idx + 1}`}  data-testid={`book-item-${idx + 1}`} >
                                 <div className="bookInfo">
                                     <p className="bookInfoLeft"   > {`${idx + 1}`}</p>
                                     <p className="bookInfoCenter" > {book.name} </p>
@@ -33,6 +32,7 @@ export default function BooksData({ BooksData }) {
                                     <button
                                         className="book-toggle"
                                         id="book-toggle"
+                                        data-testid="book-toggle"
                                         style={{ justifyContent: "flex-end" }}
                                         onClick={() => changeDisplayBorrower(idx)}
 
@@ -60,7 +60,7 @@ export default function BooksData({ BooksData }) {
                     )
                 })
             ) : (
-                <div className="error-message" id="error-message">
+                <div className="error-message" id="error-message" data-testid="error-message">
                     <p> No Data Found</p>
 
                 </div>

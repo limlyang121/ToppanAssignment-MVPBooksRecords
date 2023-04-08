@@ -30,7 +30,6 @@ public class FindTop3BooksServiceImpl implements FindTop3BooksService {
 
     @Override
     @Transactional
-    @Cacheable("findTop3BooksRented")
     public List<Top3BooksDTO> findTop3BooksRented(String country) {
         long countryCode = countryDataUtils.getCountryCode(country);
         if (countryCode == 0){

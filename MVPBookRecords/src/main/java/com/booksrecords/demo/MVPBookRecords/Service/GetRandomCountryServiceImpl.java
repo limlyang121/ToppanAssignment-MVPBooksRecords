@@ -18,7 +18,6 @@ public class GetRandomCountryServiceImpl implements GetRandomCountryService{
     }
 
     @Override
-    @Cacheable("randomCountry")
     public RandomCountryDTO getRandomCountry() {
         CountryData randomCountry = countryDataUtils.getRandomCountry();
         return new RandomCountryDTO(randomCountry);

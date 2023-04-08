@@ -6,13 +6,14 @@ export default function BorrowerInfo({ borrowerInfo }) {
         borrowerInfo.map((borrower, idx) => {
             return (
                 <React.Fragment key={idx} >
-                    <div className="customer" id="customer">
+                    <div className="customer" id="customer" data-testid="customer"
+                    >
                         {borrower !== null ? (
                             <p>{borrower} </p>
                         ) :
                             (
                                 <div className="borrowerNull" id="borrowerNull">
-                                    <p>NA </p>
+                                    <p>NA</p>
                                 </div>
                             )
                         }
