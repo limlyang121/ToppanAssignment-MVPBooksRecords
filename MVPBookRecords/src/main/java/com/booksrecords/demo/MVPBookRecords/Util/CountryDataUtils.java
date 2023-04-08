@@ -1,6 +1,8 @@
 package com.booksrecords.demo.MVPBookRecords.Util;
 
 import com.opencsv.CSVReaderBuilder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ResourceUtils;
@@ -11,7 +13,7 @@ import java.util.*;
 
 @Component
 public class CountryDataUtils {
-    private CountryData countryData;
+    private final CountryData countryData;
     @Autowired
     public CountryDataUtils(CountryData countryData) {
         this.countryData = countryData;
@@ -20,7 +22,7 @@ public class CountryDataUtils {
     private HashMap<String, CountryData> countryDataMap;
 
     @PostConstruct
-    public  Map<String, CountryData> readCSV() throws IOException {
+    public  Map<String, CountryData> readCSV()  {
         countryDataMap = new HashMap<>();
         try {
             File file = ResourceUtils.getFile("classpath:CountryList.csv");
@@ -42,7 +44,7 @@ public class CountryDataUtils {
         return countryDataMap;
     }
 
-    public  long getCountryCode (String country){
+    public long getCountryCode (String country){
         try{
             return countryDataMap.get(country).getCountryNumber();
         }catch(NullPointerException e){

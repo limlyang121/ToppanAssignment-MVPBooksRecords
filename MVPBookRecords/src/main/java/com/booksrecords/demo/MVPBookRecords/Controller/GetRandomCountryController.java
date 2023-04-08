@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin("http://localhost:3000")
 public class GetRandomCountryController {
-    private GetRandomCountryService getRandomCountryService;
+    private final GetRandomCountryService getRandomCountryService;
 
     @Autowired
     public GetRandomCountryController(GetRandomCountryService getRandomCountryService) {
