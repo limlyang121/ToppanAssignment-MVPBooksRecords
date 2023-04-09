@@ -12,9 +12,7 @@ export default function BorrowerInfo({ borrowerInfo }) {
                             <p>{borrower} </p>
                         ) :
                             (
-                                <div className="borrowerNull" id="borrowerNull">
-                                    <p>NA</p>
-                                </div>
+                                <p>NA</p>
                             )
                         }
                     </div>
