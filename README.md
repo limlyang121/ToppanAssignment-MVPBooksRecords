@@ -1,8 +1,4 @@
-Introduction
--------------------
-This project is created as part of the Toppan FullStack Developer Assessment.  
-The Original problem can be found at https://github.com/RyanToppan/CoDev-Assignment-FullStack-Spring.  
-
+**Note**  
 There are several assumptions made when building the solutions. Since no questions are allowed to be asked to clarify, the next section will list some of the important assumptions and elaborate on why the are Made  
 
 Assumptions
